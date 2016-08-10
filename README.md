@@ -1,9 +1,9 @@
 Kanban builder
 ==============
 
-I have to be honest: this as dejectedly niche as it gets. Imagine, if you will, the following scenario:
+A word of warning: this as niche as it gets. Imagine, if you will, the following scenario:
 
-* you want to share a Kanban board with your fellow team members
+* you want to share a Kanban board with your team
 * there's no Trello, Jira, Rally, Dashing, nothing
 * even if you're prepared to put up with a single user spreadsheet your users can't get to it easily
 
