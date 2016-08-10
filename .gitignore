@@ -1,0 +1,15 @@
+*.swp
+.DS_Store
+*.pyc
+__pycache__
+target
+.coverage
+user
+.project
+.pydevproject
+ve
+*~
+.*~
+*.iml
+.idea
+out
