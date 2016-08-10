@@ -1,0 +1,13 @@
+columns:
+- 'To do':
+  - A
+  - B
+  - C is longer than B
+- 'Doing':
+  - D
+  - E
+  - F
+- 'Done':
+  - G
+  - H
+  - I
