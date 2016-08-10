@@ -1,7 +1,7 @@
 Kanban builder
 ==============
 
-A word of warning: this as niche as it gets. Imagine, if you will, the following scenario:
+A word of warning: this is as niche as it gets. Imagine, if you will, the following scenario:
 
 * you want to share a Kanban board with your team
 * there's no Trello, Jira, Rally, Dashing, nothing
