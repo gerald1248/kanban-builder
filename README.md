@@ -34,15 +34,15 @@ Sample input file input.yml
 ---------------------------
 ```
 columns:
-- 'To do'
+- 'To do':
   - A
   - B
   - C is longer than B
-- 'Doing'
+- 'Doing':
   - D
   - E 
   - F 
-- 'Done'
+- 'Done':
   - G
   - H
   - I 
