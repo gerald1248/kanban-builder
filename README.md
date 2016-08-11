@@ -11,6 +11,15 @@ But, and there's always a but, you have a VCS and you decide to use the one file
 
 Now if you find you'd like to drop a Git(Hub|Lab|NextCoolThing) flavoured Markdown table in there, you may find this Kanban builder useful.
 
+Usage
+-----
+```
+$ python [relative/path/to/]kanban_builder.py [input.yml]
+
+Arguments:
+--help/-h: display this text
+```
+
 Build
 -----
 ```
@@ -21,15 +30,8 @@ $ pyb install_dependencies
 $ pyb
 ```
 
-Usage
------
-```
-$ python [relative/path/to/]kanban_builder.py [input.yml]
-```
-
 Sample input file input.yml
 ---------------------------
-
 ```
 columns:
 - 'To do'
@@ -67,5 +69,6 @@ Output source
 Exceedingly rarely asked questions
 ----------------------------------
 Q: what have I gained?
-A: it's much faster moving tasks along by yanking lines in vi and putting them in the next column array; moving cells up and down in visual mode is so tedious nobody would dream of doing it twice
+
+A: it's much faster moving tasks along by yanking lines in vi and putting them in the next column array; moving cells right, up and down (and adjusting column widths too) in visual mode is so tedious nobody would dream of doing it twice.
 
