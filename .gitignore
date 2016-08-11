@@ -13,3 +13,5 @@ ve
 *.iml
 .idea
 out
+build
+dist
