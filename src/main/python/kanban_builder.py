@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Creates Markdown Kanban boards from Yaml input
 """
@@ -7,16 +5,14 @@ Creates Markdown Kanban boards from Yaml input
 import os
 import sys
 import yaml
-import glob
 import re
 import string
-import doctest
-import dpath.util
 
 USAGE = """
 Usage: python [relative/path/to/]kanban_builder.py [input.yml]
 
 Arguments:
+--rows=N: display no more than N rows (default is 20)
 --help/-h: display this text 
 
 Build:
@@ -26,21 +22,16 @@ $ pybuilder install_dependencies
 $ pyb
 """
 
-def parse_dict(obj):
+def parse_dict(obj, max_rows):
   md = ''
-  if obj == {} or isinstance(obj, list):
+  if obj == [] or isinstance(obj, dict):
     return md
-
-  if 'columns' not in obj:
-    return md
-
-  columns = dpath.util.get(obj, '/columns')
 
   headers = []
   arrays = []
   max_string_lengths = []
 
-  for column in columns:
+  for column in obj:
     key = column.keys()[0]
     headers.append(key) #headers
     arr = column[key]
@@ -75,7 +66,8 @@ def parse_dict(obj):
   column_count = len(headers)
 
   #write table rows and cells
-  for row_index in range(max_array_length):
+  for row_index in range(min(max_array_length, max_rows)):
+
     for col_index in range(column_count):
       cell = ''
       if len(arrays[col_index]) > row_index:
@@ -84,6 +76,10 @@ def parse_dict(obj):
       md += pad_string(cell, max_string_lengths[col_index])
     md += '|\n'
 
+  if max_array_length > max_rows:
+    d = max_array_length - max_rows
+    plural = '' if d == 1 else 's'
+    md += '*' + str(max_array_length - max_rows) +  ' row' + plural + ' omitted*\n'
   return md
 
 def pad_string(s, length, char=' '):
@@ -102,28 +98,40 @@ def read_yaml(path): # pragma: no cover
     yaml_buffer.close()
   except IOError as ex:
     print "Can't open {}: {}".format(path, ex.strerror)
-    sys.exit(1)
+    sys.exit(2)
   except yaml.parser.ParserError as ex:
     print "Can't parse YAML file {}: {}".format(path, ex)
-    sys.exit(2)
+    sys.exit(3)
+  except:
+    print "Unknown error opening and parsing {}".format(path)
+    sys.exit(4)
   return obj
 
-if __name__ == "__main__": # pragma: no cover
+if __name__ == '__main__': # pragma: no cover
   path = ''
-  # don't run if help requested
+  max_rows = 20
   if len(sys.argv) > 1:
-    for arg in sys.argv:
-      if arg == "--help" or arg == "-h":
-        print USAGE
+    for index in range(len(sys.argv)):
+      arg = sys.argv[index]
+      if arg == '--help' or arg == '-h':
+        print(USAGE)
         sys.exit(0)
-      else:
+      elif '--rows=' in arg:
+        max_rows_string = arg[7:]
+        max_rows = int(max_rows_string)
+      elif index > 0:
         path = arg
   else:
     print USAGE
     sys.exit(0)
 
+  if len(path) == 0:
+    #TODO: how about STDIN?
+    print('No path given')
+    sys.exit(1)
+
   obj = read_yaml(path)
-  md = parse_dict(obj)
+  md = parse_dict(obj, max_rows)
 
   print md
   sys.exit(0)

@@ -12,4 +12,3 @@ default_task = "publish"
 def initialize(project):
   project.build_depends_on('pyyaml')
   project.build_depends_on('dpath')
-  project.build_depends_on('pyinstaller')

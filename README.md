@@ -17,6 +17,7 @@ Usage
 $ python [relative/path/to/]kanban_builder.py [input.yml]
 
 Arguments:
+--rows=N: display no more than N rows (default is 20)
 --help/-h: display this text
 ```
 
@@ -33,7 +34,6 @@ $ pyb
 Sample input file input.yml
 ---------------------------
 ```
-columns:
 - 'To do':
   - A
   - B
@@ -70,5 +70,16 @@ Exceedingly rarely asked questions
 ----------------------------------
 Q: what have I gained?
 
-A: it's much faster moving tasks along by yanking lines in vi and putting them in the next column array; moving cells right, up and down (and adjusting column widths too) in visual mode is so tedious nobody would dream of doing it twice.
+A: Let's say you want to move 'C is longer than B' from 'To do' to 'Doing'. In vi you would type:
 
+```
+4Gddjp:x
+```
+
+To achieve the same by editing the markdown source, you would need to jump into visual mode and:
+
+* cut out 'C is longer than B'
+* add a new row at the bottom of the table
+* shunt down 'D', 'E' and 'F'
+* insert 'C is longer than B' at the top of the Doing column
+* adjust the column widths
