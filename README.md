@@ -21,18 +21,8 @@ Arguments:
 --help/-h: display this text
 ```
 
-Build
------
-```
-$ virtualenv ve
-$ source ve/bin/activate
-$ pip install pybuilder
-$ pyb install_dependencies
-$ pyb
-```
-
-Sample input file input.yml
----------------------------
+Sample YAML input
+-----------------
 ```
 - 'To do':
   - A
@@ -64,6 +54,16 @@ Output source
 |A                 |D        |G       |
 |B                 |E        |H       |
 |C is longer than B|F        |I       |
+```
+
+Build
+-----
+```
+$ virtualenv ve
+$ source ve/bin/activate
+$ pip install pybuilder
+$ pyb install_dependencies
+$ pyb
 ```
 
 Exceedingly rarely asked questions
