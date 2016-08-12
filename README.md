@@ -73,7 +73,7 @@ Q: what have I gained?
 A: Let's say you want to move 'C is longer than B' from 'To do' to 'Doing'. In vi you would type:
 
 ```
-5Gddjp:x
+4Gddp:x
 ```
 
 To achieve the same by editing the markdown source, you would need to jump into visual mode and:
