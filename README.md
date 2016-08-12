@@ -68,7 +68,7 @@ $ pyb
 
 Exceedingly rarely asked questions
 ----------------------------------
-Q: what have I gained?
+Q: What have I gained?
 
 A: Let's say you want to move 'C is longer than B' from 'To do' to 'Doing'. In vi you would type:
 
