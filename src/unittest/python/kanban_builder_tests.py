@@ -7,7 +7,7 @@ from kanban_builder import escape_string
 class ParseDictTest(unittest.TestCase):
   def test_parse_dict(self):
     self.assertEqual(
-        parse_dict({'columns': [ { 'header1': [ 'a', 'b' ] }, { 'header2': [ 'c', 'd'] } ] }),
+        parse_dict([ { 'header1': [ 'a', 'b' ] }, { 'header2': [ 'c', 'd'] } ], 10),
         '|**header1**|**header2**|\n|:----------|:----------|\n|a          |c          |\n|b          |d          |\n'
     )
 
