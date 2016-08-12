@@ -7,7 +7,7 @@ A word of warning: this is as niche as it gets. Imagine, if you will, the follow
 * there's no Trello, Jira, Rally, Dashing, nothing
 * even if you're prepared to put up with a single user spreadsheet your users can't get to it easily
 
-But, and there's always a but, you have a VCS and you decide to use the one file you can manipulate easily without firing off pull requests every time you move a task along: the one and only README.md.
+What you do have is a VCS, so you decide to use the one file you can manipulate easily: the one and only README.md.
 
 Now if you find you'd like to drop a Git(Hub|Lab|NextCoolThing) flavoured Markdown table in there, you may find this Kanban builder useful.
 
