@@ -1,7 +1,7 @@
 Kanban builder
 ==============
 
-A word of warning: this is as niche as it gets. Imagine, if you will, the following scenario:
+A word of warning: this is as niche as it gets. Imagine the following scenario:
 
 * you want to share a Kanban board with your team
 * there's no Trello, Jira, Rally, Dashing, nothing
@@ -70,7 +70,7 @@ Exceedingly rarely asked questions
 ----------------------------------
 Q: What have I gained?
 
-A: Let's say you want to move 'C is longer than B' from 'To do' to 'Doing'. In vi you would type:
+A: Let's say you want to move 'C is longer than B' from 'To do' to 'Doing'. With kanban-builder you would open the input YAML in vi and type:
 
 ```
 4Gddp:x
@@ -83,3 +83,4 @@ To achieve the same by editing the markdown source, you would need to jump into 
 * shunt down 'D', 'E' and 'F'
 * insert 'C is longer than B' at the top of the Doing column
 * adjust the column widths
+* despair
