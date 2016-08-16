@@ -11,4 +11,3 @@ default_task = "publish"
 @init
 def initialize(project):
   project.build_depends_on('pyyaml')
-  project.build_depends_on('dpath')
